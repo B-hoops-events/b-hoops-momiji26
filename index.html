@@ -19,6 +19,8 @@
   --forest-deep:#142A21;
   --maple:#B8322A;
   --ginkgo:#E2A62E;
+  --apply:#B5532F;
+  --apply-dark:#9A4425;
   --paper:#F6F3EC;
   --paper-2:#EDE8DC;
   --ink:#232826;
@@ -72,6 +74,8 @@ a{color:inherit}
 }
 .btn-line{background:#06C755;color:#fff}
 .btn-line:hover{background:#05b24c}
+.btn-apply{background:var(--apply);color:#fff;box-shadow:0 4px 16px rgba(0,0,0,.25)}
+.btn-apply:hover{background:var(--apply-dark)}
 .btn-ghost{border:1.5px solid rgba(255,255,255,.6);color:#fff}
 .btn-ghost:hover{background:rgba(255,255,255,.12)}
 .btn:active{transform:scale(.98)}
@@ -155,9 +159,8 @@ section{padding:84px 0}
 .molkky .photo{background:var(--forest-deep)}
 .join-note{margin:24px 0 8px;padding:18px 20px;border-left:4px solid var(--ginkgo);background:rgba(255,255,255,.08)}
 .join-note h3{font-family:var(--serif);font-size:18px;color:var(--ginkgo);margin-bottom:6px}
-.join-note ul{list-style:none;font-size:15px;line-height:1.85}
-.join-note li{position:relative;padding-left:1.1em;margin-bottom:4px}
-.join-note li::before{content:"・";position:absolute;left:0}
+.join-note .join-lead{font-family:var(--serif);font-weight:800;font-size:19px;line-height:1.6;color:#fff;margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.2)}
+.join-note .join-text{font-size:15px;line-height:1.85;opacity:.92}
 .entry-types{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
 .entry-types div{border:1.5px solid rgba(255,255,255,.35);padding:18px;border-radius:6px}
 .entry-types h3{font-family:var(--serif);font-size:18px;margin-bottom:6px;color:var(--ginkgo)}
@@ -232,8 +235,8 @@ footer .brand{font-family:var(--serif);font-weight:800;font-size:20px;color:#fff
 .float-line{
   transition:opacity .3s,transform .3s;
   position:fixed;left:16px;right:16px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:50;
-  background:#06C755;color:#fff;text-align:center;text-decoration:none;font-weight:700;
-  padding:15px;border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,.25);display:none;
+  background:var(--apply);color:#fff;text-align:center;text-decoration:none;font-weight:700;
+  padding:15px;border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,.28);display:none;
 }
 body.in-hero .float-line{opacity:0;transform:translateY(20px);pointer-events:none}
 @media (max-width:640px){
@@ -267,7 +270,7 @@ body.in-hero .float-line{opacity:0;transform:translateY(20px);pointer-events:non
     <h1><span>紅葉狩り</span>＆<span>モルック大会</span></h1>
     <p class="hero-sub">万博記念公園で、お弁当を囲んで秋の一日を。<br>今年は初開催のモルック大会もあります。</p>
     <div class="hero-cta">
-      <a class="btn btn-line" href="#apply">申込み方法を見る</a>
+      <a class="btn btn-apply" href="#apply">申込み方法を見る</a>
       <a class="btn btn-ghost" href="#outline">開催概要</a>
     </div>
   </div>
@@ -355,10 +358,8 @@ body.in-hero .float-line{opacity:0;transform:translateY(20px);pointer-events:non
     <p>年齢を問わず、誰でも気軽に楽しめるスポーツ「モルック」。ルール説明があるので、初めての方も安心してご参加ください。</p>
     <div class="join-note">
       <h3>参加できる方</h3>
-      <ul>
-        〜6歳から、車椅子の方でも参加できます〜
-        <li>小学1年生から、杖で立つことができ、150グラムのものを狙って投げられる方なら、どなたでも参加できます。</li>
-      </ul>
+      <p class="join-lead">〜6歳から、車椅子の方でも参加できます〜</p>
+      <p class="join-text">小学1年生から、杖で立つことができ、150グラムのものを狙って投げられる方なら、どなたでも参加できます。</p>
     </div>
     <p class="price"><b>1,000円</b><span>参加費（1人）</span></p>
 
@@ -462,14 +463,15 @@ body.in-hero .float-line{opacity:0;transform:translateY(20px);pointer-events:non
 <section id="venue">
   <div class="wrap">
     <h2 class="sec-title">会場</h2>
-    <p class="lead"><b>万博記念公園</b>（大阪府吹田市）</p>
-
-    <h3 class="sub">お弁当の受取：日本庭園前ゲート</h3>
-    <p style="margin-top:6px;font-size:15px;color:var(--ink-soft)">12:00〜お渡しします。受け取ったあとは自由です。</p>
+    <p class="lead" style="margin-bottom:0"><b>万博記念公園</b>（大阪府吹田市）</p>
     <div class="fee-note" role="note">
       <p class="fee-title">万博記念公園の入園料が別にかかります</p>
       <p>お弁当代・参加費とは別に、各自でお支払いください。<br><b>大人（高校生以上）450円／中学生以下は無料</b></p>
     </div>
+
+
+    <h3 class="sub" style="margin-top:36px">お弁当の受取：日本庭園前ゲート</h3>
+    <p style="margin-top:6px;font-size:15px;color:var(--ink-soft)">12:00〜お渡しします。受け取ったあとは自由です。</p>
     <div class="map">
       <iframe title="万博記念公園 日本庭園前ゲートの地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
         src="https://www.google.com/maps?q=%E4%B8%87%E5%8D%9A%E8%A8%98%E5%BF%B5%E5%85%AC%E5%9C%92+%E6%97%A5%E6%9C%AC%E5%BA%AD%E5%9C%92%E5%89%8D%E3%82%B2%E3%83%BC%E3%83%88&output=embed"></iframe>
