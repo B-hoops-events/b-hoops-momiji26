@@ -209,6 +209,9 @@ section{padding:84px 0}
 .venue-bg{background:var(--paper-2)}
 .map{margin-top:20px;border-radius:6px;overflow:hidden;border:1px solid var(--line);background:#fff}
 .map iframe{display:block;width:100%;height:320px;border:0}
+.fee-note{margin:20px 0 4px;padding:18px 20px;background:#FFF4D6;border:2px solid var(--ginkgo);border-radius:8px;font-size:15px;line-height:1.8}
+.fee-note .fee-title{font-family:var(--serif);font-weight:800;font-size:18px;color:var(--maple);margin-bottom:4px}
+.sub2{font-family:var(--serif);font-size:16px;margin-top:28px;color:var(--forest)}
 .map-btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
 .btn-map{background:var(--forest);color:#fff}
 .btn-map:hover{background:var(--forest-deep)}
@@ -287,11 +290,12 @@ body.in-hero .float-line{opacity:0;transform:translateY(20px);pointer-events:non
     <p class="lead">紅葉を楽しみながらのんびり過ごすもよし、モルックで盛り上がるもよし！みんなで楽しい秋の一日を過ごしましょう🍂</p>
     <dl class="facts">
       <div><dt>日時</dt><dd><b>2026年12月5日（土）</b><small>12:00 お弁当のお渡し／14:00 モルック大会スタート</small></dd></div>
-      <div><dt>場所</dt><dd><b>万博記念公園</b>（大阪府吹田市）<small>B_hoops.で場所を確保しています。公園の入園料は別途かかります</small></dd></div>
+      <div><dt>場所</dt><dd><b>万博記念公園</b>（大阪府吹田市）<small>公園の入園料は別途かかります</small></dd></div>
       <div><dt>お弁当代</dt><dd><b>5,000円</b><small>ORIBIO特製の紅葉狩り弁当</small></dd></div>
       <div><dt>モルック参加費</dt><dd><b>1人 1,000円</b><small>紅葉狩りに参加される方限定</small></dd></div>
       <div><dt>申込み</dt><dd><b>公式LINEで受付</b><small>11/6（金）12:00 受付開始 〜 11/20（金）12:00 締切</small></dd></div>
-      <div><dt>集合場所</dt><dd><b>東の広場</b><small>B_hoops.のバナースタンドが目印です</small></dd></div>
+      <div><dt>お弁当の受取</dt><dd><b>日本庭園前ゲート</b><small>12:00〜 受け取ったあとは自由です</small></dd></div>
+      <div><dt>モルック会場</dt><dd><b>東の広場</b><small>B_hoops.のバナースタンドが目印です</small></dd></div>
     </dl>
   </div>
 </section>
@@ -300,7 +304,7 @@ body.in-hero .float-line{opacity:0;transform:translateY(20px);pointer-events:non
 <section class="tl-bg" id="schedule">
   <div class="wrap">
     <h2 class="sec-title">当日の流れ</h2>
-    <p class="lead">お弁当を受け取ったあとは自由。14:00のモルックに合わせて集まってください。</p>
+    <p class="lead">お弁当を受け取ったあとは自由です。14:00の〜モルック大会に参加される方は、東の広場に集まってください。</p>
     <ol class="timeline">
       <li>
         <time>12:00</time>
@@ -308,11 +312,11 @@ body.in-hero .float-line{opacity:0;transform:translateY(20px);pointer-events:non
       </li>
       <li>
         <time>受取後</time>
-        <div><h3>自由時間</h3><p>お弁当を受け取ったあとは自由です。散策、外遊び、おしゃべり。紅葉をのんびり楽しみましょう。</p></div>
+        <div><h3>自由時間</h3><p>お弁当を受け取ったあとは自由です。東の広場にB_hoops.の場所取りがあるので、そこで食べてもOK。散策や外遊びで、紅葉をのんびり楽しみましょう。</p></div>
       </li>
       <li>
         <time>14:00</time>
-        <div><h3>モルック大会スタート</h3><p>はじめにルール説明があります。参加者は集合してください。</p></div>
+        <div><h3>モルック大会スタート</h3><p>東の広場で行います。はじめにルール説明があります。参加者は東の広場に集合してください。</p></div>
       </li>
     </ol>
   </div>
@@ -329,7 +333,7 @@ body.in-hero .float-line{opacity:0;transform:translateY(20px);pointer-events:non
       <img src="bento.jpg" alt="ORIBIO特製の紅葉狩り弁当（昨年のもの）" loading="lazy" onerror="this.remove()">
     </figure>
     <p class="cap">※写真は昨年のお弁当です。今年は内容が変わります。</p>
-    <p>ORIBIO特製の紅葉狩り弁当を楽しみながら、散策や外遊びなど、自由に過ごしましょう。B_hoops.で場所を確保しているので、荷物を置いてゆっくりできます。</p>
+    <p>ORIBIO特製の紅葉狩り弁当を楽しみながら、散策や外遊びなど、自由に過ごしましょう。お弁当は日本庭園前ゲートでお渡しします。東の広場にB_hoops.で場所取りをしているので、そこで食べたり、荷物を置いてゆっくりしたりもできます。</p>
     <p class="price"><b>5,000円</b><span>お弁当代（1人分）</span></p>
   </div>
 </section>
@@ -339,7 +343,7 @@ body.in-hero .float-line{opacity:0;transform:translateY(20px);pointer-events:non
   <div class="wrap">
     <span class="badge">紅葉狩り参加者限定・初開催</span>
     <h2 class="sec-title">モルック大会</h2>
-    <p class="lead">14:00〜 スタート</p>
+    <p class="lead">14:00〜 スタート（会場：東の広場）</p>
     <figure class="photo">
       <img src="molkky.jpg" alt="モルックで遊ぶ様子" loading="lazy" onerror="this.remove()">
     </figure>
@@ -447,6 +451,30 @@ body.in-hero .float-line{opacity:0;transform:translateY(20px);pointer-events:non
   <div class="wrap">
     <h2 class="sec-title">会場</h2>
     <p class="lead"><b>万博記念公園</b>（大阪府吹田市）</p>
+
+    <h3 class="sub">お弁当の受取：日本庭園前ゲート</h3>
+    <p style="margin-top:6px;font-size:15px;color:var(--ink-soft)">12:00〜お渡しします。受け取ったあとは自由です。</p>
+    <div class="fee-note" role="note">
+      <p class="fee-title">万博記念公園の入園料が別にかかります</p>
+      <p>お弁当代・参加費とは別に、各自でお支払いください。<br><b>大人（高校生以上）450円／中学生以下は無料</b></p>
+    </div>
+    <div class="map">
+      <iframe title="万博記念公園 日本庭園前ゲートの地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=%E4%B8%87%E5%8D%9A%E8%A8%98%E5%BF%B5%E5%85%AC%E5%9C%92+%E6%97%A5%E6%9C%AC%E5%BA%AD%E5%9C%92%E5%89%8D%E3%82%B2%E3%83%BC%E3%83%88&output=embed"></iframe>
+    </div>
+    <div class="map-btns">
+      <a class="btn btn-map" href="https://www.google.com/maps/dir/?api=1&destination=%E4%B8%87%E5%8D%9A%E8%A8%98%E5%BF%B5%E5%85%AC%E5%9C%92+%E6%97%A5%E6%9C%AC%E5%BA%AD%E5%9C%92%E5%89%8D%E3%82%B2%E3%83%BC%E3%83%88" target="_blank" rel="noopener">現在地から経路を見る</a>
+      <a class="btn btn-map-sub" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%87%E5%8D%9A%E8%A8%98%E5%BF%B5%E5%85%AC%E5%9C%92+%E6%97%A5%E6%9C%AC%E5%BA%AD%E5%9C%92%E5%89%8D%E3%82%B2%E3%83%BC%E3%83%88" target="_blank" rel="noopener">Googleマップで開く</a>
+    </div>
+
+    <h4 class="sub2">電車でのアクセス</h4>
+    <ul class="info-list" style="margin-top:6px">
+      <li>大阪モノレール「万博記念公園駅」または「公園東口駅」から、徒歩約15分</li>
+      <li>園内は広いので、時間に余裕を持ってお越しください（所要時間は目安です）。</li>
+    </ul>
+
+    <h3 class="sub" style="margin-top:44px">モルック大会・場所取り：東の広場</h3>
+    <p style="margin-top:6px;font-size:15px;color:var(--ink-soft)">B_hoops.のバナースタンドを目印にお越しください。お弁当をここで食べるのもOKです。</p>
     <div class="map">
       <iframe title="万博記念公園 東の広場の地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
         src="https://www.google.com/maps?q=%E4%B8%87%E5%8D%9A%E8%A8%98%E5%BF%B5%E5%85%AC%E5%9C%92+%E6%9D%B1%E3%81%AE%E5%BA%83%E5%A0%B4&output=embed"></iframe>
@@ -455,14 +483,8 @@ body.in-hero .float-line{opacity:0;transform:translateY(20px);pointer-events:non
       <a class="btn btn-map" href="https://www.google.com/maps/dir/?api=1&destination=%E4%B8%87%E5%8D%9A%E8%A8%98%E5%BF%B5%E5%85%AC%E5%9C%92+%E6%9D%B1%E3%81%AE%E5%BA%83%E5%A0%B4" target="_blank" rel="noopener">現在地から経路を見る</a>
       <a class="btn btn-map-sub" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%87%E5%8D%9A%E8%A8%98%E5%BF%B5%E5%85%AC%E5%9C%92+%E6%9D%B1%E3%81%AE%E5%BA%83%E5%A0%B4" target="_blank" rel="noopener">Googleマップで開く</a>
     </div>
-    <h3 class="sub" style="margin-top:32px">電車でのアクセス</h3>
-    <ul class="info-list" style="margin-top:8px">
-      <li>大阪モノレール「公園東口駅」から、東の広場まで徒歩約6分</li>
-      <li>大阪モノレール「万博記念公園駅」から、東の広場まで徒歩約10分</li>
-    </ul>
-    <p style="margin-top:20px"><b>集合場所：万博記念公園 東の広場</b><br>B_hoops.のバナースタンドを目印にお越しください。</p>
+
     <ul class="info-list">
-      <li><b>万博記念公園の入園料は、お弁当代・参加費とは別に、各自でお支払いください。</b>大人（高校生以上）450円、中学生以下は無料です。</li>
       <li>屋外での開催です。防寒・日よけなど、天候に合わせた服装でお越しください。</li>
       <li>ゴミは各自お持ち帰り、または分別にご協力ください。</li>
     </ul>
