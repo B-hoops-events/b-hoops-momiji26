@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>B_hoops. 紅葉狩り＆モルック大会 | 2026年12月5日（土）</title>
+<meta name="description" content="2026年12月5日（土）万博記念公園。ORIBIO特製の紅葉狩り弁当と、初開催のモルック大会。申込は公式LINEから。">
+<meta property="og:title" content="B_hoops. 紅葉狩り＆モルック大会">
+<meta property="og:description" content="12月5日（土）万博記念公園で、お弁当とモルックの秋の一日。">
+<meta property="og:type" content="website">
+<!-- OGP画像を使う場合は下の行のコメントを外して画像パスを指定 -->
+<!-- <meta property="og:image" content="images/ogp.jpg"> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#1E3B2F;
+  --forest-deep:#142A21;
+  --maple:#B8322A;
+  --ginkgo:#E2A62E;
+  --paper:#F6F3EC;
+  --paper-2:#EDE8DC;
+  --ink:#232826;
+  --ink-soft:#5B635E;
+  --line:#D8D1C0;
+  --serif:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);color:var(--ink);background:var(--paper);
+  line-height:1.9;font-size:16px;-webkit-text-size-adjust:100%;
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ginkgo);outline-offset:3px}
+.wrap{width:min(100% - 40px,760px);margin-inline:auto}
+
+/* ---------- Hero ---------- */
+.hero{
+  position:relative;overflow:hidden;color:#fff;
+  background:
+    linear-gradient(180deg,rgba(14,32,24,.55) 0%,rgba(14,32,24,.38) 38%,rgba(14,32,24,.82) 100%),
+    url("images/hero.jpg") center 40%/cover,
+    var(--forest-deep);
+  padding:calc(64px + env(safe-area-inset-top,0px)) 0 72px;
+  min-height:92svh;display:flex;align-items:center;
+}
+.hero-brand,.hero-date,.hero h1,.hero-sub{text-shadow:0 2px 18px rgba(0,0,0,.45)}
+.hero .wrap{position:relative;z-index:2}
+.hero-brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:15px;opacity:.9}
+.hero-date{
+  font-family:var(--serif);font-weight:800;line-height:1;margin:28px 0 10px;
+  font-size:clamp(76px,22vw,150px);letter-spacing:-.02em;
+  display:flex;align-items:baseline;gap:.12em;flex-wrap:wrap;
+}
+.hero-date small{font-size:.26em;font-weight:700;letter-spacing:.04em}
+.hero-date .dow{color:var(--ginkgo)}
+.hero h1{
+  font-family:var(--serif);font-weight:800;line-height:1.35;
+  font-size:clamp(26px,6.4vw,44px);
+}
+.hero h1 span{display:inline-block}
+.hero-sub{margin-top:18px;font-size:15px;opacity:.88;max-width:34em}
+.hero-cta{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{
+  display:inline-block;text-decoration:none;font-weight:700;font-size:16px;
+  padding:15px 28px;border-radius:999px;transition:transform .15s,background .15s;
+}
+.btn-line{background:#06C755;color:#fff}
+.btn-line:hover{background:#05b24c}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.6);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+.btn:active{transform:scale(.98)}
+
+/* 舞い落ちる葉（ここだけ動かす） */
+.leaves{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.leaf{position:absolute;top:-60px;width:var(--s);height:var(--s);opacity:.9;
+  animation:fall var(--d) linear var(--delay) infinite}
+.leaf svg{width:100%;height:100%;display:block;stroke:rgba(255,255,255,.75);stroke-width:2.5;stroke-linejoin:round;filter:drop-shadow(0 2px 3px rgba(0,0,0,.4));animation:sway 4s ease-in-out var(--delay) infinite alternate}
+/* 葉ゾーン：葉(z1)は背景より上、文字(.wrap z2)より下 */
+.leafzone{position:relative;overflow:hidden;isolation:isolate}
+.leaves-zone{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.leafzone .wrap{position:relative;z-index:2}
+.leaves-zone .leaf{opacity:.7}
+@keyframes fall{
+  0%{transform:translate3d(0,-60px,0) rotate(0deg)}
+  100%{transform:translate3d(var(--x),var(--zh,110vh),0) rotate(540deg)}
+}
+@keyframes sway{from{transform:translateX(-14px)}to{transform:translateX(14px)}}
+@media (prefers-reduced-motion:reduce){
+  .leaf{animation:none;top:var(--ys)}
+  .leaf svg{animation:none}
+  html{scroll-behavior:auto}
+}
+
+/* ---------- Sections ---------- */
+section{padding:84px 0}
+.sec-title{
+  font-family:var(--serif);font-weight:800;font-size:clamp(26px,5.4vw,34px);
+  line-height:1.4;margin-bottom:10px;
+}
+.lead{color:var(--ink-soft);margin-bottom:36px}
+
+/* 概要 */
+.facts{border-top:2px solid var(--ink)}
+.facts div{
+  display:grid;grid-template-columns:7.5em 1fr;gap:12px;
+  padding:20px 0;border-bottom:1px solid var(--line);
+}
+.facts dt{font-weight:700;color:var(--maple)}
+.facts dd b{font-family:var(--serif);font-size:1.15em}
+.facts dd small{display:block;color:var(--ink-soft);font-size:14px;line-height:1.7}
+
+/* 当日の流れ（時系列なのでタイムライン） */
+.tl-bg{background:var(--paper-2)}
+.timeline{list-style:none;position:relative;margin-top:8px}
+.timeline::before{content:"";position:absolute;left:5.6em;top:10px;bottom:10px;width:2px;background:var(--line)}
+.timeline li{display:grid;grid-template-columns:5em 1fr;gap:28px;padding:18px 0;position:relative}
+.timeline li::before{
+  content:"";position:absolute;left:calc(5.6em - 5px);top:30px;width:12px;height:12px;
+  border-radius:50%;background:var(--maple);border:3px solid var(--paper-2);box-sizing:content-box;margin-left:-3px;
+}
+.timeline time{font-family:var(--serif);font-weight:800;font-size:22px;text-align:right}
+.timeline h3{font-family:var(--serif);font-size:20px;line-height:1.5;margin-bottom:4px}
+.timeline p{color:var(--ink-soft);font-size:15px}
+
+/* 紅葉狩り・モルック */
+.photo{
+  margin:0 0 28px;border-radius:6px;overflow:hidden;background:var(--forest);
+  aspect-ratio:16/10;display:grid;place-items:center;color:rgba(255,255,255,.55);font-size:13px;
+}
+.photo img{width:100%;height:100%;object-fit:cover}
+.price{
+  display:inline-flex;align-items:baseline;gap:10px;margin:6px 0 24px;
+  font-family:var(--serif);
+}
+.price b{font-size:40px;font-weight:800;line-height:1}
+.price span{font-size:15px;color:var(--ink-soft);font-family:var(--sans)}
+.note-box{
+  border-left:4px solid var(--ginkgo);background:#fff;padding:16px 20px;margin:24px 0;font-size:15px;
+}
+.badge{
+  display:inline-block;background:var(--maple);color:#fff;font-weight:700;font-size:13px;
+  padding:3px 14px;border-radius:999px;margin-bottom:14px;
+}
+.molkky{background:var(--forest);color:#fff}
+.molkky .lead,.molkky .note-box{color:inherit}
+.molkky .lead{opacity:.8}
+.molkky .price span{color:rgba(255,255,255,.75)}
+.molkky .note-box{background:rgba(255,255,255,.08);border-left-color:var(--ginkgo);color:#fff}
+.molkky .photo{background:var(--forest-deep)}
+.entry-types{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
+.entry-types div{border:1.5px solid rgba(255,255,255,.35);padding:18px;border-radius:6px}
+.entry-types h3{font-family:var(--serif);font-size:18px;margin-bottom:6px;color:var(--ginkgo)}
+.entry-types p{font-size:14.5px;opacity:.9;line-height:1.75}
+.rules-head{font-family:var(--serif);font-size:20px;margin-top:40px}
+.rules-hint{font-size:13px;opacity:.7;margin:4px 0 14px}
+.rule-track{
+  display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+  padding:4px 0 14px;scrollbar-width:none;
+}
+.rule-track::-webkit-scrollbar{display:none}
+.rule-card{
+  flex:0 0 min(82%,340px);scroll-snap-align:start;background:#fff;color:var(--ink);
+  border-radius:8px;padding:24px 22px 26px;min-height:230px;
+}
+.rule-card .step{font-size:13px;font-weight:700;color:var(--maple);margin-bottom:6px}
+.rule-card h4{font-family:var(--serif);font-size:22px;line-height:1.4;margin-bottom:10px}
+.rule-card p{font-size:15px;line-height:1.85;color:var(--ink-soft)}
+.rule-card b{color:var(--ink)}
+.rule-nav{display:flex;align-items:center;gap:14px;margin-top:4px}
+.rule-dots{display:flex;gap:8px;flex:1}
+.rule-dots i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.35);transition:background .2s,transform .2s}
+.rule-dots i.on{background:var(--ginkgo);transform:scale(1.3)}
+.rule-btn{
+  width:40px;height:40px;border-radius:50%;border:1.5px solid rgba(255,255,255,.5);background:transparent;
+  color:#fff;font-size:18px;cursor:pointer;
+}
+.rule-btn:hover{background:rgba(255,255,255,.14)}
+.photo figcaption,.cap{font-size:13px}
+.photo{position:relative}
+.photo img{position:absolute;inset:0}
+.cap{color:var(--ink-soft);margin:-16px 0 24px}
+
+/* 申込み */
+.steps{list-style:none;counter-reset:s;margin:8px 0 32px}
+.steps li{counter-increment:s;position:relative;padding:0 0 26px 3.2em}
+.steps li:not(:last-child)::after{content:"";position:absolute;left:1.05em;top:2.4em;bottom:4px;width:2px;background:var(--line)}
+.steps li::before{
+  content:counter(s);position:absolute;left:0;top:0;width:2.1em;height:2.1em;border-radius:50%;
+  background:var(--maple);color:#fff;font-family:var(--serif);font-weight:800;display:grid;place-items:center;
+}
+.steps h3{font-family:var(--serif);font-size:19px;line-height:1.5;margin-bottom:6px}
+.steps ul{list-style:none;font-size:15px;color:var(--ink-soft)}
+.steps ul li{padding:1px 0 1px 1.2em;counter-increment:none}
+.steps ul li::before{content:"・";position:absolute;left:0;top:0;width:auto;height:auto;background:none;color:var(--ink-soft);display:inline;border-radius:0}
+.steps ul li::after{display:none}
+.apply-cta{text-align:center;padding:36px 20px;background:#fff;border:1px solid var(--line);border-radius:8px}
+.apply-cta p{margin-bottom:18px;font-weight:500}
+.apply-cta .btn{font-size:18px;padding:17px 40px}
+
+.sub{font-family:var(--serif);font-size:19px;line-height:1.5}
+.btn[aria-disabled="true"]{background:#9AA39D;pointer-events:none}
+/* 会場・注意 */
+.venue-bg{background:var(--paper-2)}
+.map{margin-top:20px;border-radius:6px;overflow:hidden;border:1px solid var(--line);background:#fff}
+.map iframe{display:block;width:100%;height:320px;border:0}
+.map-btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+.btn-map{background:var(--forest);color:#fff}
+.btn-map:hover{background:var(--forest-deep)}
+.btn-map-sub{border:1.5px solid var(--forest);color:var(--forest)}
+.btn-map-sub:hover{background:rgba(30,59,47,.08)}
+.info-list{margin-top:24px;padding-left:1.2em;font-size:15px;color:var(--ink-soft)}
+.info-list li{margin-bottom:6px}
+
+footer{background:var(--forest-deep);color:rgba(255,255,255,.75);text-align:center;padding:40px 20px calc(40px + env(safe-area-inset-bottom,0px));font-size:14px}
+footer .brand{font-family:var(--serif);font-weight:800;font-size:20px;color:#fff;margin-bottom:6px}
+
+/* スマホ下部の固定LINEボタン */
+.float-line{
+  transition:opacity .3s,transform .3s;
+  position:fixed;left:16px;right:16px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:50;
+  background:#06C755;color:#fff;text-align:center;text-decoration:none;font-weight:700;
+  padding:15px;border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,.25);display:none;
+}
+body.in-hero .float-line{opacity:0;transform:translateY(20px);pointer-events:none}
+@media (max-width:640px){
+  section{padding:64px 0}
+  .float-line{display:block}
+  footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}
+  .facts div{grid-template-columns:1fr;gap:2px}
+  .entry-types{grid-template-columns:1fr}
+  .timeline::before{left:4.9em}
+  .timeline li{grid-template-columns:4.3em 1fr;gap:24px}
+  .timeline li::before{left:calc(4.9em - 5px)}
+  .timeline time{font-size:19px}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ ヒーロー ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="maple" viewBox="0 0 100 100"><path d="M50 4 L58 28 L80 18 L72 44 L96 50 L72 62 L78 86 L55 76 L50 98 L45 76 L22 86 L28 62 L4 50 L28 44 L20 18 L42 28 Z"/></symbol>
+    <symbol id="ginkgo" viewBox="0 0 100 100"><path d="M50 94 C48 70 20 62 6 30 C24 16 42 22 50 40 C58 22 76 16 94 30 C80 62 52 70 50 94 Z"/></symbol>
+  </defs>
+</svg>
+<header class="hero" id="top">
+  <div class="wrap">
+    <p class="hero-brand">B_hoops.</p>
+    <p class="hero-date" aria-label="2026年12月5日 土曜日">
+      <span>12.5</span><small>2026</small><small class="dow">SAT</small>
+    </p>
+    <h1><span>紅葉狩り</span>＆<span>モルック大会</span></h1>
+    <p class="hero-sub">万博記念公園で、お弁当を囲んで秋の一日を。<br>今年は初開催のモルック大会もあります。</p>
+    <div class="hero-cta">
+      <a class="btn btn-line" href="#apply">申込み方法を見る</a>
+      <a class="btn btn-ghost" href="#outline">開催概要</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- 葉が舞うゾーン（開催概要〜当日の流れ）。葉は文字の背面。不要ならleafzoneのdivとleaves-zoneのブロックを削除 -->
+<div class="leafzone" id="leafzone">
+<div class="leaves-zone" aria-hidden="true">
+  <span class="leaf" style="--s:34px;--d:17s;--delay:-2s;--x:60px;--ys:8%;left:6%"><svg fill="#C8402F"><use href="#maple"/></svg></span>
+  <span class="leaf" style="--s:26px;--d:21s;--delay:-9s;--x:-50px;--ys:30%;left:20%"><svg fill="#E2A62E"><use href="#ginkgo"/></svg></span>
+  <span class="leaf" style="--s:38px;--d:19s;--delay:-5s;--x:80px;--ys:55%;left:38%"><svg fill="#D9632B"><use href="#maple"/></svg></span>
+  <span class="leaf" style="--s:24px;--d:23s;--delay:-12s;--x:-70px;--ys:18%;left:55%"><svg fill="#E2A62E"><use href="#ginkgo"/></svg></span>
+  <span class="leaf" style="--s:32px;--d:18s;--delay:-7s;--x:50px;--ys:70%;left:72%"><svg fill="#B8322A"><use href="#maple"/></svg></span>
+  <span class="leaf" style="--s:28px;--d:22s;--delay:-14s;--x:-40px;--ys:40%;left:88%"><svg fill="#E2A62E"><use href="#ginkgo"/></svg></span>
+  <span class="leaf" style="--s:30px;--d:20s;--delay:-16s;--x:70px;--ys:85%;left:46%"><svg fill="#C8402F"><use href="#maple"/></svg></span>
+  <span class="leaf" style="--s:22px;--d:24s;--delay:-4s;--x:-60px;--ys:62%;left:94%"><svg fill="#D9632B"><use href="#ginkgo"/></svg></span>
+</div>
+
+<!-- ============ 開催概要 ============ -->
+<section id="outline">
+  <div class="wrap">
+    <h2 class="sec-title">開催概要</h2>
+    <p class="lead">紅葉を楽しみながらのんびり過ごすもよし、モルックで盛り上がるもよし。</p>
+    <dl class="facts">
+      <div><dt>日時</dt><dd><b>2026年12月5日（土）</b><small>12:00 お弁当のお渡し／14:00 モルック大会スタート</small></dd></div>
+      <div><dt>場所</dt><dd><b>万博記念公園</b>（大阪府吹田市）<small>B_hoops.で場所を確保しています。公園の入園料は別途かかります</small></dd></div>
+      <div><dt>お弁当代</dt><dd><b>5,000円</b><small>ORIBIO特製の紅葉狩り弁当</small></dd></div>
+      <div><dt>モルック参加費</dt><dd><b>1人 1,000円</b><small>紅葉狩りに参加される方限定</small></dd></div>
+      <div><dt>申込み</dt><dd><b>公式LINEで受付</b><small>11/6（金）12:00 受付開始 〜 11/20（金）12:00 締切</small></dd></div>
+      <div><dt>集合場所</dt><dd><b>東の広場</b><small>B_hoops.のバナースタンドが目印です</small></dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============ 当日の流れ ============ -->
+<section class="tl-bg" id="schedule">
+  <div class="wrap">
+    <h2 class="sec-title">当日の流れ</h2>
+    <p class="lead">お弁当を受け取ったあとは自由。14:00のモルックに合わせて集まってください。</p>
+    <ol class="timeline">
+      <li>
+        <time>12:00</time>
+        <div><h3>お弁当のお渡し</h3><p>ORIBIO特製の紅葉狩り弁当を受け取って、B_hoops.の場所でいただきます。</p></div>
+      </li>
+      <li>
+        <time>受取後</time>
+        <div><h3>自由時間</h3><p>お弁当を受け取ったあとは自由です。散策、外遊び、おしゃべり。紅葉をのんびり楽しみましょう。</p></div>
+      </li>
+      <li>
+        <time>14:00</time>
+        <div><h3>モルック大会スタート</h3><p>はじめにルール説明があります。参加者は集合してください。</p></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+</div><!-- /leafzone -->
+
+<!-- ============ 紅葉狩り ============ -->
+<section id="momiji">
+  <div class="wrap">
+    <h2 class="sec-title">紅葉狩り</h2>
+    <p class="lead">12:00〜 お弁当のお渡し</p>
+    <figure class="photo">
+      <img src="images/bento.jpg" alt="ORIBIO特製の紅葉狩り弁当（昨年のもの）" loading="lazy" onerror="this.remove()">
+    </figure>
+    <p class="cap">※写真は昨年のお弁当です。今年は内容が変わります。</p>
+    <p>ORIBIO特製の紅葉狩り弁当を楽しみながら、散策や外遊びなど、自由に過ごしましょう。B_hoops.で場所を確保しているので、荷物を置いてゆっくりできます。</p>
+    <p class="price"><b>5,000円</b><span>お弁当代（1人分）</span></p>
+  </div>
+</section>
+
+<!-- ============ モルック大会 ============ -->
+<section class="molkky" id="molkky">
+  <div class="wrap">
+    <span class="badge">紅葉狩り参加者限定・初開催</span>
+    <h2 class="sec-title">モルック大会</h2>
+    <p class="lead">14:00〜 スタート</p>
+    <figure class="photo">
+      <img src="images/molkky.jpg" alt="モルックで遊ぶ様子" loading="lazy" onerror="this.remove()">
+    </figure>
+    <p>年齢を問わず、誰でも気軽に楽しめるスポーツ「モルック」。ルール説明があるので、初めての方も安心してご参加ください。</p>
+    <p class="price"><b>1,000円</b><span>参加費（1人）</span></p>
+
+    <div class="entry-types">
+      <div><h3>チームで参加</h3><p>3〜4人のチームでエントリー。友だち・家族・同僚と誘い合わせてどうぞ。</p></div>
+      <div><h3>個人で参加</h3><p>個人参加もOK。主催側でランダムにチームを組みます。</p></div>
+    </div>
+
+    <h3 class="rules-head">モルックのルール</h3>
+    <p class="rules-hint">横にスワイプして、5つのステップで確認できます</p>
+    <div class="rule-track" id="ruleTrack" tabindex="0" aria-label="モルックのルール">
+      <article class="rule-card">
+        <p class="step">STEP 1／5</p><h4>モルックってなに？</h4>
+        <p>数字が書かれた木のピン（スキットル）を、木の棒（モルック）で倒して得点を競う、フィンランド生まれのスポーツです。年齢や運動経験を問わず楽しめます。</p>
+      </article>
+      <article class="rule-card">
+        <p class="step">STEP 2／5</p><h4>スタート</h4>
+        <p><b>チーム対抗のトーナメント戦</b>です。エントリー数によって、2チームまたは3チームで対戦します。はじめにルール説明があります。</p>
+      </article>
+      <article class="rule-card">
+        <p class="step">STEP 3／5</p><h4>投げ方</h4>
+        <p>モルックは<b>下手投げのみ</b>です。ピンをねらって、棒を下から投げましょう。</p>
+      </article>
+      <article class="rule-card">
+        <p class="step">STEP 4／5</p><h4>点数の数え方</h4>
+        <p>倒れたピンが<b>1本</b>なら、そこに書かれた数字が得点です。<b>2本以上</b>倒れたら、倒れた本数が得点になります。</p>
+      </article>
+      <article class="rule-card">
+        <p class="step">STEP 5／5</p><h4>勝敗</h4>
+        <p>先に<b>50点ぴったり</b>になったチームの勝ちです。50点を超えてしまったら、<b>25点に戻ります</b>。</p>
+      </article>
+    </div>
+    <div class="rule-nav">
+      <button class="rule-btn" id="rulePrev" aria-label="前のステップ">&#8249;</button>
+      <div class="rule-dots" id="ruleDots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+      <button class="rule-btn" id="ruleNext" aria-label="次のステップ">&#8250;</button>
+    </div>
+
+    <p class="note-box">モルック大会は紅葉狩りに参加される方限定です。申込み時にお弁当とあわせてお知らせください。</p>
+  </div>
+</section>
+
+<!-- ============ 申込み方法 ============ -->
+<section id="apply">
+  <div class="wrap">
+    <h2 class="sec-title">申込み方法</h2>
+    <p class="lead">申込みは公式LINEから受け付けます。</p>
+    <dl class="facts" style="margin-bottom:36px">
+      <div><dt>受付期間</dt><dd><b>11/6（金）12:00 〜 11/20（金）12:00</b><small>締切後のお申込みはできません</small></dd></div>
+    </dl>
+
+    <ol class="steps">
+      <li>
+        <h3>B_hoops.公式LINEを友だち追加</h3>
+        <p style="font-size:15px;color:var(--ink-soft)">下のボタンから追加してください。</p>
+      </li>
+      <li>
+        <h3>トークで次の内容を送信</h3>
+        <ul>
+          <li>お名前（代表者）</li>
+          <li>参加人数（大人・お子さま）</li>
+          <li>お弁当の個数</li>
+          <li>モルック大会の参加有無</li>
+          <li>モルック参加の方：チームで参加（チーム名・メンバー名）／個人で参加</li>
+        </ul>
+      </li>
+      <li>
+        <h3>受付完了の返信を確認</h3>
+        <p style="font-size:15px;color:var(--ink-soft)">運営からの返信をもって申込み完了です。お支払い方法も、その際にご案内します。</p>
+      </li>
+    </ol>
+
+    <div class="apply-cta">
+      <p id="applyMsg">公式LINEで申込む</p>
+      <a class="btn btn-line" id="applyBtn" href="https://lin.ee/LdAOQZdB" target="_blank" rel="noopener">LINEで申込む</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ キャンセル・雨天 ============ -->
+<section class="tl-bg" id="notice">
+  <div class="wrap">
+    <h2 class="sec-title">雨天時・キャンセルについて</h2>
+
+    <h3 class="sub">雨天時の対応</h3>
+    <ul class="info-list" style="margin-top:8px">
+      <li>開催の判断は、<b>前日（12月4日・金）12:00の天気予報</b>で行います。</li>
+      <li>雨天で中止となった場合は、<b>お弁当の販売のみ</b>行います。紅葉狩りとモルック大会は中止です。</li>
+      <li>判断の結果は、公式LINEでお知らせします。</li>
+    </ul>
+
+    <h3 class="sub" style="margin-top:36px">キャンセルについて</h3>
+    <ul class="info-list" style="margin-top:8px">
+      <li>申込締切（11/20（金）12:00）後のキャンセルは、<b>原則できません</b>。</li>
+      <li>お申込み前に、参加人数・お弁当の個数・日程をよくご確認ください。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 会場 ============ -->
+<section id="venue">
+  <div class="wrap">
+    <h2 class="sec-title">会場</h2>
+    <p class="lead"><b>万博記念公園</b>（大阪府吹田市）</p>
+    <div class="map">
+      <iframe title="万博記念公園 東の広場の地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=%E4%B8%87%E5%8D%9A%E8%A8%98%E5%BF%B5%E5%85%AC%E5%9C%92+%E6%9D%B1%E3%81%AE%E5%BA%83%E5%A0%B4&output=embed"></iframe>
+    </div>
+    <div class="map-btns">
+      <a class="btn btn-map" href="https://www.google.com/maps/dir/?api=1&destination=%E4%B8%87%E5%8D%9A%E8%A8%98%E5%BF%B5%E5%85%AC%E5%9C%92+%E6%9D%B1%E3%81%AE%E5%BA%83%E5%A0%B4" target="_blank" rel="noopener">現在地から経路を見る</a>
+      <a class="btn btn-map-sub" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%87%E5%8D%9A%E8%A8%98%E5%BF%B5%E5%85%AC%E5%9C%92+%E6%9D%B1%E3%81%AE%E5%BA%83%E5%A0%B4" target="_blank" rel="noopener">Googleマップで開く</a>
+    </div>
+    <h3 class="sub" style="margin-top:32px">電車でのアクセス</h3>
+    <ul class="info-list" style="margin-top:8px">
+      <li>大阪モノレール「公園東口駅」から、東の広場まで徒歩約6分</li>
+      <li>大阪モノレール「万博記念公園駅」から、東の広場まで徒歩約10分</li>
+    </ul>
+    <p style="margin-top:20px"><b>集合場所：万博記念公園 東の広場</b><br>B_hoops.のバナースタンドを目印にお越しください。</p>
+    <ul class="info-list">
+      <li><b>万博記念公園の入園料は、お弁当代・参加費とは別に、各自でお支払いください。</b>大人（高校生以上）450円、中学生以下は無料です。</li>
+      <li>屋外での開催です。防寒・日よけなど、天候に合わせた服装でお越しください。</li>
+      <li>ゴミは各自お持ち帰り、または分別にご協力ください。</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p class="brand">B_hoops.</p>
+  <p>紅葉狩り＆モルック大会　2026.12.5（土）万博記念公園</p>
+</footer>
+
+<a class="float-line" href="#apply">申込み方法を見る</a>
+
+<script>
+(function(){
+  var t=document.getElementById('ruleTrack'); if(!t) return;
+  var cards=t.querySelectorAll('.rule-card'), dots=document.querySelectorAll('#ruleDots i');
+  function idx(){var w=cards[0].offsetWidth+14;return Math.min(cards.length-1,Math.round(t.scrollLeft/w));}
+  function upd(){var i=idx();dots.forEach(function(d,n){d.classList.toggle('on',n===i);});}
+  function go(d){var w=cards[0].offsetWidth+14;t.scrollTo({left:(idx()+d)*w,behavior:'smooth'});}
+  t.addEventListener('scroll',function(){window.requestAnimationFrame(upd);},{passive:true});
+  document.getElementById('rulePrev').addEventListener('click',function(){go(-1);});
+  document.getElementById('ruleNext').addEventListener('click',function(){go(1);});
+})();
+</script>
+<script>
+(function(){
+  // 受付期間：2026-11-06 12:00 〜 2026-11-20 12:00（日本時間）
+  var start=new Date('2026-11-06T12:00:00+09:00'), end=new Date('2026-11-20T12:00:00+09:00'), now=new Date();
+  var btns=[document.getElementById('applyBtn')];
+  var msg=document.getElementById('applyMsg');
+  var label=null;
+  if(now<start){label='11/6（金）12:00から受付開始'; msg.textContent='受付開始までお待ちください';}
+  else if(now>=end){label='受付は終了しました'; msg.textContent='申込み受付は11/20 12:00で終了しました';}
+  if(label){
+    btns.forEach(function(b){ if(!b) return; b.textContent=label; b.setAttribute('aria-disabled','true'); b.removeAttribute('href'); b.style.background='#9AA39D'; });
+  }
+})();
+</script>
+<script>
+(function(){
+  // 葉ゾーンの高さに合わせて落下距離を決める
+  var z=document.getElementById('leafzone');
+  function fit(){ if(z) z.style.setProperty('--zh',(z.offsetHeight+60)+'px'); }
+  fit(); window.addEventListener('resize',fit); window.addEventListener('load',fit);
+  // ヒーローが見えている間は、画面下の固定ボタンを隠す
+  var h=document.getElementById('top');
+  if(h&&'IntersectionObserver' in window){
+    new IntersectionObserver(function(e){ document.body.classList.toggle('in-hero',e[0].isIntersecting); },{threshold:.15}).observe(h);
+  }
+})();
+</script>
+</body>
+</html>
