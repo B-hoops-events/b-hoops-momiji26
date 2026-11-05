@@ -212,6 +212,20 @@ section{padding:84px 0}
 .apply-cta .btn{font-size:18px;padding:17px 40px}
 
 .sub{font-family:var(--serif);font-size:19px;line-height:1.5}
+.cancel-box{background:#fff;border:1px solid var(--line);border-left:6px solid var(--maple);border-radius:8px;padding:22px 24px;margin-top:20px}
+.cancel-main{font-family:var(--serif);font-size:20px;line-height:1.6;font-weight:700;margin-bottom:10px}
+.cancel-main b{color:var(--maple)}
+.cancel-box ul{padding-left:1.2em;font-size:15px;color:var(--ink-soft)}
+.cancel-box li{margin-bottom:4px}
+.cancel-box a{color:var(--maple);font-weight:700}
+.rain-steps{margin-top:20px}
+.rain-steps li p{font-size:15px;color:var(--ink-soft)}
+.rain-steps li p b{color:var(--ink)}
+.choice{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.choice div{background:#fff;border:1.5px solid var(--line);border-radius:8px;padding:14px 16px;line-height:1.6}
+.choice b{display:block;font-family:var(--serif);font-size:16px;color:var(--maple);margin-bottom:2px}
+.choice span{display:block;font-size:13.5px;color:var(--ink-soft)}
+.deadline-note{font-size:13.5px;color:var(--ink-soft);margin-top:-8px}
 .btn[aria-disabled="true"]{background:#9AA39D;pointer-events:none}
 /* 会場・注意 */
 .venue-bg{background:var(--paper-2)}
@@ -245,6 +259,7 @@ body.in-hero .float-line{opacity:0;transform:translateY(20px);pointer-events:non
   footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}
   .facts div{grid-template-columns:1fr;gap:2px}
   .entry-types{grid-template-columns:1fr}
+  .choice{grid-template-columns:1fr}
   .timeline::before{left:4.9em}
   .timeline li{grid-template-columns:4.3em 1fr;gap:24px}
   .timeline li::before{left:calc(4.9em - 5px)}
@@ -439,28 +454,48 @@ body.in-hero .float-line{opacity:0;transform:translateY(20px);pointer-events:non
   </div>
 </section>
 
-<!-- ============ キャンセル・雨天 ============ -->
-<section class="tl-bg" id="notice">
+<!-- ============ キャンセル ============ -->
+<section class="tl-bg" id="cancel">
   <div class="wrap">
-    <h2 class="sec-title">雨天時・キャンセルについて</h2>
+    <h2 class="sec-title">キャンセルについて</h2>
+    <div class="cancel-box">
+      <p class="cancel-main">申込締切（11/20（金）12:00）後のキャンセルは、<b>原則できません。</b></p>
+      <ul>
+        <li>お申込み前に、参加人数・お弁当の個数・日程をよくご確認ください。</li>
+        <li>ただし、雨天で中止となった場合は、<a href="#rain">雨天時の対応</a>のとおり12/2（水）16:00までキャンセルできます。</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-    <h3 class="sub">雨天時の対応</h3>
-    <ul class="info-list" style="margin-top:8px">
-      <li>開催の判断は、<b>前日（12月4日・金）12:00の天気予報</b>で行います。</li>
-      <li>雨天で中止となった場合は、<b>お弁当の販売のみ</b>行います。紅葉狩りとモルック大会は中止です。</li>
-      <li>判断の結果は、公式LINEでお知らせします。</li>
-    </ul>
-
-    <h3 class="sub" style="margin-top:36px">キャンセルについて</h3>
-    <ul class="info-list" style="margin-top:8px">
-      <li>申込締切（11/20（金）12:00）後のキャンセルは、<b>原則できません</b>。</li>
-      <li>お申込み前に、参加人数・お弁当の個数・日程をよくご確認ください。</li>
-    </ul>
+<!-- ============ 雨天時 ============ -->
+<section id="rain">
+  <div class="wrap">
+    <h2 class="sec-title">雨天時の対応</h2>
+    <p style="margin-top:6px;font-size:15px;color:var(--ink-soft)">雨天の場合は、次の流れで開催の可否をご連絡します。</p>
+    <ol class="steps rain-steps">
+      <li>
+        <h3>12/1（火）20:00の天気予報で判断</h3>
+        <p>開催するか、中止にするかを決めます。</p>
+      </li>
+      <li>
+        <h3>中止の場合は、公式LINEからご連絡</h3>
+        <p>紅葉狩りとモルック大会は中止です。お弁当の販売は、<b>ORIBIO cafe</b>で行います。</p>
+      </li>
+      <li>
+        <h3>12/2（水）16:00までにご返信ください</h3>
+        <p>中止の連絡を受け取ったら、公式LINEで次のどちらかをお知らせください。</p>
+        <div class="choice">
+          <div><b>お弁当の注文だけする</b><span>お弁当はORIBIO cafeでのお渡しになります</span></div>
+          <div><b>キャンセルする</b><span>お申込み全体のキャンセル</span></div>
+        </div>
+      </li>
+    </ol>
   </div>
 </section>
 
 <!-- ============ 会場 ============ -->
-<section id="venue">
+<section class="venue-bg" id="venue">
   <div class="wrap">
     <h2 class="sec-title">会場</h2>
     <p class="lead" style="margin-bottom:0"><b>万博記念公園</b>（大阪府吹田市）</p>
@@ -468,7 +503,6 @@ body.in-hero .float-line{opacity:0;transform:translateY(20px);pointer-events:non
       <p class="fee-title">万博記念公園の入園料が別にかかります</p>
       <p>お弁当代・参加費とは別に、各自でお支払いください。<br><b>大人（高校生以上）450円／中学生以下は無料</b></p>
     </div>
-
 
     <h3 class="sub" style="margin-top:36px">お弁当の受取：日本庭園前ゲート</h3>
     <p style="margin-top:6px;font-size:15px;color:var(--ink-soft)">12:00〜お渡しします。受け取ったあとは自由です。</p>
