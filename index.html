@@ -227,6 +227,8 @@ section{padding:84px 0}
 .choice span{display:block;font-size:13.5px;color:var(--ink-soft)}
 .deadline-note{font-size:13.5px;color:var(--ink-soft);margin-top:-8px}
 .btn[aria-disabled="true"]{background:#9AA39D;pointer-events:none}
+.apply-cta .btn[aria-disabled="true"]{padding:16px 28px;font-size:16px;white-space:nowrap}
+.apply-cta #applyMsg{font-family:var(--serif);font-size:20px;font-weight:700}
 /* 会場・注意 */
 .venue-bg{background:var(--paper-2)}
 .map{margin-top:20px;border-radius:6px;overflow:hidden;border:1px solid var(--line);background:#fff}
@@ -567,7 +569,7 @@ body.in-hero .float-line{opacity:0;transform:translateY(20px);pointer-events:non
   var btns=[document.getElementById('applyBtn')];
   var msg=document.getElementById('applyMsg');
   var label=null;
-  if(now<start){label='11/10（火）20:00から受付開始'; msg.textContent='受付開始までお待ちください';}
+  if(now<start){label='受付開始までお待ちください'; msg.textContent='11/10（火）20:00から受付開始';}
   else if(now>=end){label='受付は終了しました'; msg.textContent='申込み受付は11/20 12:00で終了しました';}
   if(label){
     btns.forEach(function(b){ if(!b) return; b.textContent=label; b.setAttribute('aria-disabled','true'); b.removeAttribute('href'); b.style.background='#9AA39D'; });
