@@ -316,7 +316,7 @@ body.in-hero .float-line{opacity:0;transform:translateY(20px);pointer-events:non
       <div><dt>場所</dt><dd><b>万博記念公園</b>（大阪府吹田市）<small>公園の入園料は別途かかります</small></dd></div>
       <div><dt>お弁当代</dt><dd><b>5,000円</b><small>ORIBIO特製の紅葉狩り弁当</small></dd></div>
       <div><dt>モルック参加費</dt><dd><b>1人 1,000円</b><small>紅葉狩りに参加される方限定</small></dd></div>
-      <div><dt>申込み</dt><dd><b>公式LINEで受付</b><small>11/6（金）12:00 受付開始 〜 11/20（金）12:00 締切</small></dd></div>
+      <div><dt>申込み</dt><dd><b>公式LINEで受付</b><small>11/10（火）20:00 受付開始 〜 11/20（金）12:00 締切</small></dd></div>
       <div><dt>お弁当の受取</dt><dd><b>日本庭園前ゲート</b><small>12:00〜 受け取ったあとは自由です</small></dd></div>
       <div><dt>モルック会場</dt><dd><b>東の広場</b><small>B_hoops.のバナースタンドが目印です</small></dd></div>
     </dl>
@@ -423,7 +423,7 @@ body.in-hero .float-line{opacity:0;transform:translateY(20px);pointer-events:non
     <h2 class="sec-title">申込み方法</h2>
     <p class="lead">申込みは公式LINEから受け付けます。</p>
     <dl class="facts" style="margin-bottom:36px">
-      <div><dt>受付期間</dt><dd><b>11/6（金）12:00 〜 11/20（金）12:00</b><small>締切後のお申込みはできません</small></dd></div>
+      <div><dt>受付期間</dt><dd><b>11/10（火）20:00 〜 11/20（金）12:00</b><small>締切後のお申込みはできません</small></dd></div>
     </dl>
 
     <ol class="steps">
@@ -462,7 +462,7 @@ body.in-hero .float-line{opacity:0;transform:translateY(20px);pointer-events:non
       <p class="cancel-main">申込締切（11/20（金）12:00）後のキャンセルは、<b>原則できません。</b></p>
       <ul>
         <li>お申込み前に、参加人数・お弁当の個数・日程をよくご確認ください。</li>
-        <li>ただし、雨天で中止となった場合は、<a href="#rain">雨天時の対応</a>のとおり12/2（水）16:00までキャンセルできます。</li>
+        <li>ただし、雨天で中止となった場合は、<a href="#rain">雨天時の対応</a>のとおり12/2（水）16:00までにキャンセルできます。</li>
       </ul>
     </div>
   </div>
@@ -562,12 +562,12 @@ body.in-hero .float-line{opacity:0;transform:translateY(20px);pointer-events:non
 </script>
 <script>
 (function(){
-  // 受付期間：2026-11-06 12:00 〜 2026-11-20 12:00（日本時間）
-  var start=new Date('2026-11-06T12:00:00+09:00'), end=new Date('2026-11-20T12:00:00+09:00'), now=new Date();
+  // 受付期間：2026-11-10 20:00 〜 2026-11-20 12:00（日本時間）
+  var start=new Date('2026-11-10T20:00:00+09:00'), end=new Date('2026-11-20T12:00:00+09:00'), now=new Date();
   var btns=[document.getElementById('applyBtn')];
   var msg=document.getElementById('applyMsg');
   var label=null;
-  if(now<start){label='11/6（金）12:00から受付開始'; msg.textContent='受付開始までお待ちください';}
+  if(now<start){label='11/10（火）20:00から受付開始'; msg.textContent='受付開始までお待ちください';}
   else if(now>=end){label='受付は終了しました'; msg.textContent='申込み受付は11/20 12:00で終了しました';}
   if(label){
     btns.forEach(function(b){ if(!b) return; b.textContent=label; b.setAttribute('aria-disabled','true'); b.removeAttribute('href'); b.style.background='#9AA39D'; });
